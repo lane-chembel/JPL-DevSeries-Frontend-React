@@ -1,8 +1,6 @@
 import React from 'react';
-import Table from './components/Table/DynamicTable';
-import GetOnlinePosts from './components/OnLinePosts/GetOnLinePosts';
-
-import localJson from './components/LocalPosts/local.json'
+import GetEmployeeData from './components/EmployeeData/GetEmployeeData';
+import localJson from './components/LocalPosts/local.json';
 
 
 export default class App extends React.Component {
@@ -11,20 +9,20 @@ export default class App extends React.Component {
 
       this.state = localJson;
     }
-    
-    
+
+    componentDidMount() {
+        document.title = "Employee Info";
+    }
     render() {
         
         
         return (
-          <div className="App">
-            Hello, React
-            <br/> Table 1 data
-            <Table data={this.state}/>
-            
-            <br/> Table 2 data
-            <GetOnlinePosts/>
-          </div>
+           
+            <div classname="app">
+                <h1> Employee Information and Performance Metrics</h1>
+            <br/><h2> Employee Information Table </h2>
+            <GetEmployeeData/>
+            </div>
           
         );
     }
